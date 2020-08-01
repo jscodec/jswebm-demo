@@ -3,11 +3,13 @@ import './App.css';
 
 import JsWebm from 'jswebm';
 
+const videoFile = `${process.env.PUBLIC_URL}/video/Big_Buck_Bunny_4K.webm`;
+
 function App() {
   const [demuxer, setDemuxer] = React.useState(null);
 
   React.useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/video/Big_Buck_Bunny_4K.webm`)
+    fetch(videoFile)
       .then(res => res.arrayBuffer())
       .then((buffer) => {
         const demuxer = new JsWebm();
@@ -23,6 +25,9 @@ function App() {
   const renderDemuxer = () => (
     <>
       <h3>Demuxer State:</h3>
+      <video controls>
+        <source src={videoFile} />
+      </video>
       <div>
         <table className="demuxer-table">
           <tbody>
