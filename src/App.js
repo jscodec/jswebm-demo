@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { JsWebm } from 'jswebm';
+import JsWebm from 'jswebm';
 
 function App() {
   const [demuxer, setDemuxer] = React.useState(null);
