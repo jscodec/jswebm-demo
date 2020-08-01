@@ -7,7 +7,7 @@ function App() {
   const [demuxer, setDemuxer] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('/video/Big_Buck_Bunny_4K.webm')
+    fetch(`${process.env.PUBLIC_URL}/video/Big_Buck_Bunny_4K.webm`)
       .then(res => res.arrayBuffer())
       .then((buffer) => {
         const demuxer = new JsWebm();
