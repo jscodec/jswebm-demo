@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.demuxer-table{
+  width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.demuxer-table td, .demuxer-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+pre{
+  text-align: left;
+  background: #f3f3f3;
+  padding: 5px;
+}
