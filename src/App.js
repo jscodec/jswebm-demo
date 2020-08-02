@@ -17,17 +17,42 @@ function App() {
         while (!demuxer.eof) {
           demuxer.demux();
         }
+        console.log(demuxer);
         setDemuxer(demuxer);
       })
       .catch(console.log);
   }, []);
 
+  const renderTracks = () => (
+    <>
+      <h3>Tracks:</h3>
+      {demuxer.tracks.trackEntries.map(trackEntry => (
+        <table className="demuxer-table">
+          <tbody>
+            <tr>
+              <th>State</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>codecID</td>
+              <td>{trackEntry.codecID}</td>
+            </tr>
+            <tr>
+              <td>codecName</td>
+              <td>{trackEntry.codecName}</td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
+    </>
+  );
+
   const renderDemuxer = () => (
     <>
-      <h3>Demuxer State:</h3>
       <video controls>
         <source src={videoFile} />
       </video>
+      <h3>Basic Meta:</h3>
       <div>
         <table className="demuxer-table">
           <tbody>
@@ -44,6 +69,10 @@ function App() {
               </td>
             </tr>
             <tr>
+              <td>docType</td>
+              <td>{demuxer.docType}</td>
+            </tr>
+            <tr>
               <td>audioCodec</td>
               <td>{demuxer.audioCodec}</td>
             </tr>
@@ -57,6 +86,7 @@ function App() {
             </tr>
           </tbody>
         </table>
+        {renderTracks()}
       </div>
     </>
   );

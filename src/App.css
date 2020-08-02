@@ -41,6 +41,7 @@
   width: 800px;
   margin: 0 auto;
   border-collapse: collapse;
+  margin-bottom: 30px;
 }
 
 .demuxer-table td, .demuxer-table th {
