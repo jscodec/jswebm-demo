@@ -26,8 +26,8 @@ function App() {
   const renderTracks = () => (
     <>
       <h3>Tracks:</h3>
-      {demuxer.tracks.trackEntries.map(trackEntry => (
-        <table className="demuxer-table">
+      {demuxer.tracks.trackEntries.map((trackEntry, i) => (
+        <table key={i} className="demuxer-table">
           <tbody>
             <tr>
               <th>State</th>
@@ -40,6 +40,10 @@ function App() {
             <tr>
               <td>codecName</td>
               <td>{trackEntry.codecName}</td>
+            </tr>
+            <tr>
+              <td>bitDepth</td>
+              <td>{trackEntry.bitDepth}</td>
             </tr>
           </tbody>
         </table>
@@ -86,6 +90,29 @@ function App() {
             </tr>
           </tbody>
         </table>
+        <h3>Segment info:</h3>
+        <div>
+          <table className="demuxer-table">
+            <tbody>
+              <tr>
+                <th>State</th>
+                <th>Value</th>
+              </tr>
+              <tr>
+                <td>muxingApp</td>
+                <td>{demuxer.segmentInfo.muxingApp}</td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td>{demuxer.segmentInfo.title}</td>
+              </tr>
+              <tr>
+                <td>writingApp</td>
+                <td>{demuxer.segmentInfo.writingApp}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         {renderTracks()}
       </div>
     </>
@@ -94,6 +121,7 @@ function App() {
   return (
     <div className="App">
       <h1>Jswebm</h1>
+      <h2>Demuxing example</h2>
       {demuxer ? renderDemuxer() : 'Loading...'}
     </div>
   );
