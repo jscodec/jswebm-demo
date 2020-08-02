@@ -33,18 +33,15 @@ function App() {
               <th>State</th>
               <th>Value</th>
             </tr>
-            <tr>
-              <td>codecID</td>
-              <td>{trackEntry.codecID}</td>
-            </tr>
-            <tr>
-              <td>codecName</td>
-              <td>{trackEntry.codecName}</td>
-            </tr>
-            <tr>
-              <td>bitDepth</td>
-              <td>{trackEntry.bitDepth}</td>
-            </tr>
+            {Object.entries(trackEntry).map(([key, value]) => {
+              if (typeof value === 'object') return null;
+              return (
+                <tr>
+                  <td>{key}</td>
+                  <td>{value}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       ))}
