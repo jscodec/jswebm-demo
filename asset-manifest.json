@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/jswebm-demo/static/css/main.c636da44.chunk.css",
-    "main.js": "/jswebm-demo/static/js/main.de88c43f.chunk.js",
-    "main.js.map": "/jswebm-demo/static/js/main.de88c43f.chunk.js.map",
+    "main.js": "/jswebm-demo/static/js/main.547aee2d.chunk.js",
+    "main.js.map": "/jswebm-demo/static/js/main.547aee2d.chunk.js.map",
     "runtime-main.js": "/jswebm-demo/static/js/runtime-main.01da6b44.js",
     "runtime-main.js.map": "/jswebm-demo/static/js/runtime-main.01da6b44.js.map",
     "static/js/2.5db13c4f.chunk.js": "/jswebm-demo/static/js/2.5db13c4f.chunk.js",
     "static/js/2.5db13c4f.chunk.js.map": "/jswebm-demo/static/js/2.5db13c4f.chunk.js.map",
     "index.html": "/jswebm-demo/index.html",
-    "precache-manifest.15ca9e79d764221dd919c08615e0c259.js": "/jswebm-demo/precache-manifest.15ca9e79d764221dd919c08615e0c259.js",
+    "precache-manifest.70d669e8ee10db6eef5884dd4853d4be.js": "/jswebm-demo/precache-manifest.70d669e8ee10db6eef5884dd4853d4be.js",
     "service-worker.js": "/jswebm-demo/service-worker.js",
     "static/css/main.c636da44.chunk.css.map": "/jswebm-demo/static/css/main.c636da44.chunk.css.map",
     "static/js/2.5db13c4f.chunk.js.LICENSE.txt": "/jswebm-demo/static/js/2.5db13c4f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.01da6b44.js",
     "static/js/2.5db13c4f.chunk.js",
     "static/css/main.c636da44.chunk.css",
-    "static/js/main.de88c43f.chunk.js"
+    "static/js/main.547aee2d.chunk.js"
   ]
 }

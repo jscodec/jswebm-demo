@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06af4683165f30fa609c34db8c5c5a98",
+    "revision": "0159571b012cc7987ea82bfd15601fd7",
     "url": "/jswebm-demo/index.html"
   },
   {
-    "revision": "ca7eea5d10c4dfff24fb",
+    "revision": "72a36cd4a7c23eb3a783",
     "url": "/jswebm-demo/static/css/main.c636da44.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jswebm-demo/static/js/2.5db13c4f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ca7eea5d10c4dfff24fb",
-    "url": "/jswebm-demo/static/js/main.de88c43f.chunk.js"
+    "revision": "72a36cd4a7c23eb3a783",
+    "url": "/jswebm-demo/static/js/main.547aee2d.chunk.js"
   },
   {
     "revision": "ca95f4947bf14578e2ea",
