@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import JsWebm from 'jswebm';
+import MetaTable from './MetaTable';
 
 const videoFile = `${process.env.PUBLIC_URL}/video/Big_Buck_Bunny_4K.webm`;
 
@@ -27,23 +28,7 @@ function App() {
     <>
       <h3>Tracks:</h3>
       {demuxer.tracks.trackEntries.map((trackEntry, i) => (
-        <table key={i} className="demuxer-table">
-          <tbody>
-            <tr>
-              <th>State</th>
-              <th>Value</th>
-            </tr>
-            {Object.entries(trackEntry).map(([key, value]) => {
-              if (typeof value === 'object') return null;
-              return (
-                <tr>
-                  <td>{key}</td>
-                  <td>{value}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <MetaTable key={i} data={trackEntry} />
       ))}
     </>
   );
@@ -89,26 +74,11 @@ function App() {
         </table>
         <h3>Segment info:</h3>
         <div>
-          <table className="demuxer-table">
-            <tbody>
-              <tr>
-                <th>State</th>
-                <th>Value</th>
-              </tr>
-              <tr>
-                <td>muxingApp</td>
-                <td>{demuxer.segmentInfo.muxingApp}</td>
-              </tr>
-              <tr>
-                <td>title</td>
-                <td>{demuxer.segmentInfo.title}</td>
-              </tr>
-              <tr>
-                <td>writingApp</td>
-                <td>{demuxer.segmentInfo.writingApp}</td>
-              </tr>
-            </tbody>
-          </table>
+          <MetaTable data={demuxer.segmentInfo} />
+        </div>
+        <h3>Cues:</h3>
+        <div>
+          <MetaTable data={demuxer.cues} />
         </div>
         {renderTracks()}
       </div>
