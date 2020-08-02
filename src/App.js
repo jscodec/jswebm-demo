@@ -24,64 +24,20 @@ function App() {
       .catch(console.log);
   }, []);
 
-  const renderTracks = () => (
-    <>
-      <h3>Tracks:</h3>
-      {demuxer.tracks.trackEntries.map((trackEntry, i) => (
-        <MetaTable key={i} data={trackEntry} />
-      ))}
-    </>
-  );
+  const renderTracks = () =>
+    demuxer.tracks.trackEntries.map((trackEntry, i) => (
+      <MetaTable key={i} data={trackEntry} name={`Track ${i + 1}`} />
+    ));
 
   const renderDemuxer = () => (
     <>
       <video controls>
         <source src={videoFile} />
       </video>
-      <h3>Basic Meta:</h3>
-      <div>
-        <table className="demuxer-table">
-          <tbody>
-            <tr>
-              <th>State</th>
-              <th>Value</th>
-            </tr>
-            <tr>
-              <td>videoFormat</td>
-              <td>
-                <pre>
-                  {JSON.stringify(demuxer.videoFormat, null, 2)}
-                </pre>
-              </td>
-            </tr>
-            <tr>
-              <td>docType</td>
-              <td>{demuxer.docType}</td>
-            </tr>
-            <tr>
-              <td>audioCodec</td>
-              <td>{demuxer.audioCodec}</td>
-            </tr>
-            <tr>
-              <td>videoPackets</td>
-              <td>{demuxer.videoPackets.length}</td>
-            </tr>
-            <tr>
-              <td>audioPackets</td>
-              <td>{demuxer.audioPackets.length}</td>
-            </tr>
-          </tbody>
-        </table>
-        <h3>Segment info:</h3>
-        <div>
-          <MetaTable data={demuxer.segmentInfo} />
-        </div>
-        <h3>Cues:</h3>
-        <div>
-          <MetaTable data={demuxer.cues} />
-        </div>
-        {renderTracks()}
-      </div>
+      <MetaTable data={demuxer} name="Demuxer" />
+      <MetaTable data={demuxer.segmentInfo} name="Segment info" />
+      <MetaTable data={demuxer.cues} name="Cues" />
+      {renderTracks()}
     </>
   );
 
